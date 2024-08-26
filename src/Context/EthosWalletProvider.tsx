@@ -9,7 +9,7 @@ export const EthosWalletProvider: React.FC<PropsWithChildren> = ({
   return (
     <EthosConnectProvider
       ethosConfiguration={{
-        hideEmailSignIn: true, // defaults to false
+        hideEmailSignIn: true,
       }}
     >
       {children}

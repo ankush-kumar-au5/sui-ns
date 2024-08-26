@@ -1,16 +1,20 @@
 'use client';
 
-import { EthosConnectProvider } from 'ethos-connect';
+import { Chain, EthosConnectProvider } from 'ethos-connect';
 import { PropsWithChildren } from 'react';
+
+const ethosConfiguration = {
+  preferredWallets: ['Ethos Wallet'],
+  chain: Chain.SUI_TESTNET,
+  hideEmailSignIn: true,
+};
 
 export const EthosWalletProvider: React.FC<PropsWithChildren> = ({
   children,
 }) => {
   return (
     <EthosConnectProvider
-      ethosConfiguration={{
-        hideEmailSignIn: true,
-      }}
+      ethosConfiguration={ethosConfiguration}
     >
       {children}
     </EthosConnectProvider>

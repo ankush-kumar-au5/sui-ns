@@ -1,14 +1,16 @@
 'use client';
 import { useNotifiHistoryContext } from '@notifi-network/notifi-react';
-import { SignInButton, EthosConnectStatus } from 'ethos-connect';
+import { SignInButton, ethos } from 'ethos-connect';
 import { useState } from 'react';
 import { NotifiCard } from './notifi/NotifiCard';
 
 export const Header = () => {
   const [isNotifiModalOpen, setIsNotifiModalOpen] = useState<boolean>(false);
   const { unreadCount: unreadNotificationCount } = useNotifiHistoryContext();
+  const { wallet } = ethos.useWallet();
 
   const handleBellIconClick = () => {
+    if (!wallet) return;
     setIsNotifiModalOpen(!isNotifiModalOpen);
   };
 
@@ -33,7 +35,7 @@ export const Header = () => {
           />
         </svg>
 
-        {EthosConnectStatus.Connected ? (
+        {wallet ? (
           <div
             className={`absolute top-0 bg-green-300 flex justify-center items-center text-black font-semibold text-xs h-4 ${
               unreadNotificationCount > 99
@@ -46,7 +48,14 @@ export const Header = () => {
         ) : null}
       </div>
 
-      {EthosConnectStatus.Connected ? null : (
+      {wallet ? (
+        <div
+          onClick={() => wallet?.disconnect()}
+          className="cursor-pointer rounded-[30px] font-semibold text-sm connectBtn text-black p-4 px-5"
+        >
+          Disconnect Wallet
+        </div>
+      ) : (
         <SignInButton className="rounded-[30px] font-semibold text-sm connectBtn text-black p-4 px-5">
           Connect Wallet
         </SignInButton>

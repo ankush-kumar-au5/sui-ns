@@ -604,7 +604,7 @@
   padding-top: 32px;
   margin-top: 32px;
   margin-bottom: -16px;
-  border-top: 1px solid #62519C;
+  border-top: 1px solid rgba(98, 81, 156, 0.4);
   font-size: 14px;
   font-style: normal;
   font-weight: 400;
@@ -659,6 +659,7 @@
   font-weight: 800;
   line-height: normal;
   letter-spacing: 0.08px;
+  z-index: 2;
 }
 
 .notifi-inbox-config-target-edit-main {
@@ -703,4 +704,22 @@
 
 .notifi-inbox-config-topic-main {
   margin-top: 32px;
+}
+.notifi-inbox-config-target-list, .notifi-inbox-config-target-edit {
+  position: relative;
+}
+
+.notifi-inbox-config-target-list::after, .notifi-inbox-config-target-edit::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  height: 69px;
+  right: -20px;
+  left: -20px;
+  background-color: var(--notifi-input);
+  border-bottom: 1px solid rgba(98, 81, 156, 0.4);
+}
+
+.notifi-history-row:hover {
+  border: 1px solid rgba(98, 81, 156, 0.4);
 }

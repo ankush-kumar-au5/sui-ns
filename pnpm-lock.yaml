@@ -6,8 +6,8 @@ settings:
 
 dependencies:
   '@notifi-network/notifi-react':
-    specifier: ^1.1.1
-    version: 1.1.1(@types/react@18.3.3)(graphql@16.9.0)(react@18.3.1)(typescript@5.5.4)
+    specifier: 1.1.2-alpha.5
+    version: 1.1.2-alpha.5(@types/react@18.3.3)(graphql@16.9.0)(react@18.3.1)(typescript@5.5.4)
   ethos-connect:
     specifier: ^0.0.194
     version: 0.0.194(react-dom@18.3.1)(react@18.3.1)
@@ -379,8 +379,8 @@ packages:
       - encoding
     dev: false
 
-  /@notifi-network/notifi-react@1.1.1(@types/react@18.3.3)(graphql@16.9.0)(react@18.3.1)(typescript@5.5.4):
-    resolution: {integrity: sha512-EEpJdcSrVrtLZDdhFwUER6LD6uaPEfDDUU31NJ3SwkJgngVLDOA9hcXqDlmmp5Dx5IMACwYVZ09hrRHlk0TPjw==}
+  /@notifi-network/notifi-react@1.1.2-alpha.5(@types/react@18.3.3)(graphql@16.9.0)(react@18.3.1)(typescript@5.5.4):
+    resolution: {integrity: sha512-pJnWQf0NN9hq/0iqGiXhvcskMXXGa+fo8CYs/TNH0IqGMez+JMI4VHCTthW6FlpQo+hSQsjgdifckl572n6YnA==}
     engines: {node: '>=18'}
     peerDependencies:
       react: ^18

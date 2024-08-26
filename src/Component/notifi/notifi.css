@@ -357,7 +357,20 @@
   line-height: normal;
 }
 
-.notifi-nav-header-left-cta {
+.notifi-connect-right-cta {
+  top: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.notifi-connect-right-cta > svg {
+  height: 20px;
+  width: 20px;
+}
+
+.notifi-nav-header-left-cta, .notifi-nav-header-right-cta {
   width: 18px;
   height: 18px;
   top: unset;

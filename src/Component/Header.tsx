@@ -33,15 +33,17 @@ export const Header = () => {
           />
         </svg>
 
-        <div
-          className={`absolute top-0 bg-green-300 flex justify-center items-center text-black font-semibold text-xs h-4 ${
-            unreadNotificationCount > 99
-              ? 'w-7 rounded-xl -right-3'
-              : 'w-4 rounded-full right-0'
-          }`}
-        >
-          {unreadNotificationCount > 99 ? '99+' : unreadNotificationCount}
-        </div>
+        {EthosConnectStatus.Connected ? (
+          <div
+            className={`absolute top-0 bg-green-300 flex justify-center items-center text-black font-semibold text-xs h-4 ${
+              unreadNotificationCount > 99
+                ? 'w-7 rounded-xl -right-3'
+                : 'w-4 rounded-full right-0'
+            }`}
+          >
+            {unreadNotificationCount > 99 ? '99+' : unreadNotificationCount}
+          </div>
+        ) : null}
       </div>
 
       {EthosConnectStatus.Connected ? null : (
@@ -52,7 +54,7 @@ export const Header = () => {
 
       {isNotifiModalOpen ? (
         <div className="absolute top-0 right-0">
-          <NotifiCard />
+          <NotifiCard onClose={handleBellIconClick} />
         </div>
       ) : null}
     </div>

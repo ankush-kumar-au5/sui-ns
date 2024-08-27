@@ -35,7 +35,7 @@ export const Header = () => {
           />
         </svg>
 
-        {wallet ? (
+        {wallet && unreadNotificationCount > 0 ? (
           <div
             className={`absolute top-0 bg-green-300 flex justify-center items-center text-black font-semibold text-xs h-4 ${
               unreadNotificationCount > 99

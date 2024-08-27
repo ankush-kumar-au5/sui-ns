@@ -16,7 +16,6 @@ export const copy: NotifiCardModalProps['copy'] = {
         inputSeparators: {
           email: 'OR',
           telegram: 'OR',
-          // discord: 'OR',
         },
       },
       description: 'Select a minimum of one destination',
@@ -28,7 +27,6 @@ export const copy: NotifiCardModalProps['copy'] = {
         inputSeparators: {
           email: 'OR',
           telegram: 'OR',
-          // discord: 'OR',
         },
       },
     },
@@ -38,7 +36,7 @@ export const copy: NotifiCardModalProps['copy'] = {
 export const NotifiContextWrapper: React.FC<PropsWithChildren> = ({
   children,
 }) => {
-  const { status, wallet } = ethos.useWallet();
+  const { wallet } = ethos.useWallet();
 
   const signMessage = async (message: Uint8Array) => {
     if (!wallet) {
@@ -57,12 +55,9 @@ export const NotifiContextWrapper: React.FC<PropsWithChildren> = ({
 
   return (
     <NotifiContextProvider
-      tenantId={'c4n03sqskvhrr7nu5izi'}
-      cardId={'86ff2af847fb4ffc9457bd3d5177e9ba'}
+      tenantId={'suins'}
+      cardId={'6c9b175016bb4834819f6514e68e022f'}
       env={'Production'}
-      // tenantId={'4ch951h6kt0a4g6dpuh7'}
-      // cardId={'a4e4aa1048c34770be47b5d31a564871'}
-      // env={'Development'}
       walletBlockchain={'SUI'}
       accountAddress={address}
       walletPublicKey={address}

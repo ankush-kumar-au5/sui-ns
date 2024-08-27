@@ -63,6 +63,9 @@ export const NotifiContextWrapper: React.FC<PropsWithChildren> = ({
       walletPublicKey={address}
       signMessage={signMessage}
       notificationCountPerPage={8}
+      inputs={{
+        walletAddress: [{ label: '', value: address }],
+      }}
     >
       {children}
     </NotifiContextProvider>

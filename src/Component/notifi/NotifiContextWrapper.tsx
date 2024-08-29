@@ -53,6 +53,8 @@ export const NotifiContextWrapper: React.FC<PropsWithChildren> = ({
 
   const address = wallet?.address || '';
 
+  if (!address) return children;
+
   return (
     <NotifiContextProvider
       tenantId={'suins'}

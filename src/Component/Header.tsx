@@ -63,21 +63,23 @@ export const Header = () => {
         </SignInButton>
       )}
 
-      <>
-        <div
-          className={`fixed inset-0 bg-black opacity-40 z-10 transform ${
-            isNotifiModalOpen ? 'translate-x-0' : 'translate-x-full'
-          } transition-transform duration-300 ease-in-out`}
-          onClick={() => isNotifiModalOpen && handleBellIconClick()}
-        />
-        <div
-          className={`fixed top-0 right-0 z-20 transform ${
-            isNotifiModalOpen ? 'translate-x-0' : 'translate-x-full'
-          } transition-transform duration-1000 ease-in-out`}
-        >
-          <NotifiCard onClose={handleBellIconClick} />
-        </div>
-      </>
+      {wallet ? (
+        <>
+          <div
+            className={`fixed inset-0 bg-black opacity-40 z-10 transform ${
+              isNotifiModalOpen ? 'translate-x-0' : 'translate-x-full'
+            } transition-transform duration-300 ease-in-out`}
+            onClick={() => isNotifiModalOpen && handleBellIconClick()}
+          />
+          <div
+            className={`fixed top-0 right-0 z-20 transform ${
+              isNotifiModalOpen ? 'translate-x-0' : 'translate-x-full'
+            } transition-transform duration-1000 ease-in-out`}
+          >
+            <NotifiCard onClose={handleBellIconClick} />
+          </div>
+        </>
+      ) : null}
     </div>
   );
 };

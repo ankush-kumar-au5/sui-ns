@@ -19,6 +19,7 @@
 body {
   color: rgb(var(--foreground-rgb));
   background: #211C34;
+  background-image: url('../../public/suins-background-pattern.svg')
 }
 
 @layer utilities {

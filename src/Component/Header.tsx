@@ -12,6 +12,8 @@ export const Header = () => {
   const handleBellIconClick = () => {
     if (!wallet) return;
     setIsNotifiModalOpen(!isNotifiModalOpen);
+
+    document.body.style.overflow = isNotifiModalOpen ? 'auto' : 'hidden';
   };
 
   return (
@@ -61,11 +63,21 @@ export const Header = () => {
         </SignInButton>
       )}
 
-      {isNotifiModalOpen ? (
-        <div className="absolute top-0 right-0">
+      <>
+        <div
+          className={`fixed inset-0 bg-black opacity-40 z-10 transform ${
+            isNotifiModalOpen ? 'translate-x-0' : 'translate-x-full'
+          } transition-transform duration-300 ease-in-out`}
+          onClick={() => isNotifiModalOpen && handleBellIconClick()}
+        />
+        <div
+          className={`fixed top-0 right-0 z-20 transform ${
+            isNotifiModalOpen ? 'translate-x-0' : 'translate-x-full'
+          } transition-transform duration-1000 ease-in-out`}
+        >
           <NotifiCard onClose={handleBellIconClick} />
         </div>
-      ) : null}
+      </>
     </div>
   );
 };

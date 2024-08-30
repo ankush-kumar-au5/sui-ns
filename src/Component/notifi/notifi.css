@@ -15,7 +15,7 @@
 
 .notifi-card-modal {
   height: 100vh;
-  width: 351px;
+  width: 100%;
   background-color: var(--notifi-card);
   border-radius: unset;
   border: unset;

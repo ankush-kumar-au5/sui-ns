@@ -17,7 +17,7 @@ export const Header = () => {
   };
 
   return (
-    <div className="relative flex justify-end items-center p-4 gap-8">
+    <div className="flex justify-end items-center p-4 gap-8">
       <div
         className="relative flex-shrink-0 border-solid border-2 rounded-full p-3.5 border-gray-500 cursor-pointer"
         onClick={handleBellIconClick}
@@ -66,14 +66,16 @@ export const Header = () => {
       {wallet ? (
         <>
           <div
-            className={`fixed inset-0 bg-black opacity-40 z-10 transform ${
-              isNotifiModalOpen ? 'translate-x-0' : 'translate-x-full'
-            } transition-transform duration-300 ease-in-out`}
-            onClick={() => isNotifiModalOpen && handleBellIconClick()}
+            className={`fixed inset-0 z-10 bg-black opacity-40 animate-fadeIn ${
+              isNotifiModalOpen ? 'block' : 'hidden'
+            }`}
+            onClick={handleBellIconClick}
           />
           <div
-            className={`fixed top-0 right-0 z-20 transform ${
-              isNotifiModalOpen ? 'translate-x-0' : 'translate-x-full'
+            className={`fixed w-full sm:w-[351px] top-0 right-0 z-20 transform ${
+              isNotifiModalOpen
+                ? 'translate-y-0 sm:translate-x-0'
+                : '-translate-y-full sm:translate-y-0 sm:translate-x-full'
             } transition-transform duration-1000 ease-in-out`}
           >
             <NotifiCard onClose={handleBellIconClick} />

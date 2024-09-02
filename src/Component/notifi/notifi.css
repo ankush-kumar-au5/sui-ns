@@ -663,7 +663,7 @@
 .notifi-inbox-config-target-list-button {
   margin: 13px 9px;
   color: var(--notifi-text-dark);
-  background-color: var(--notifi-primary);
+  background: var(--notifi-button);
   height: 43px;
   border-radius: 30px;
   text-align: center;

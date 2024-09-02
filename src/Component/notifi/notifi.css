@@ -736,3 +736,10 @@
 .notifi-history-row:hover {
   border: 1px solid rgba(98, 81, 156, 0.4);
 }
+
+.notifi-inbox-nav-tabs > div:has(svg[type="bell"]) {
+  opacity: 0.6;
+}
+.notifi-inbox-nav-tabs > div:has(svg[type="gear"]) {
+  opacity: 0.6;
+}

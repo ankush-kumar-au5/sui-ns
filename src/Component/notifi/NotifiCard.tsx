@@ -10,7 +10,7 @@ type NotifiCardProps = {
 export const NotifiCard = ({ onClose }: NotifiCardProps) => {
   return (
     <div className={'notifiCard'}>
-      <NotifiCardModal darkMode={true} copy={copy} onClose={onClose} />
+      <NotifiCardModal darkMode={true} copy={copy} globalCtas={{ onClose }} />
     </div>
   );
 };
